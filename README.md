@@ -7,7 +7,7 @@ This repository is used to train a image classification network on tiny ImageNet
 * Python 2.7 & 3.5
 * TensorboardX
 
-# Installation
+## Installation
 
 * Clone this repository : `git clone https://github.com/albertchristianto/myTiny-imageNet-classification`
 
