@@ -13,15 +13,21 @@ This repository is a minimum implementation to train a image classification netw
 ## Installation
 In your command terminal, type these command below
 * Installing git (skip this step if git has been installed)<br>
-`sudo apt-get install git`
+```
+sudo apt-get install git
+```
 * Clone this repository<br>
-`git clone https://github.com/albertchristianto/myTiny-imageNet-classification`
+```
+git clone https://github.com/albertchristianto/myTiny-imageNet-classification
+```
 * Install these python libraries <br>
 ```
 sudo pip3 install opencv-python numpy tensorboardx
 sudo pip3 install pytorch torchvision
 ```
-## Run the Program
+* You are ready to run the code
+
+## Train a Image Classification Network
 python train.py
 
 ## Future Works
