@@ -26,7 +26,7 @@ class MyDataset(Dataset):
 
     def myAugmentation(self, img):
         if (random.random()>self.transformation['random_crop']):
-            img = cv2.resize(img, (56, 56), interpolation=cv2.INTER_CUBIC)
+            img = cv2.resize(img, (64, 64), interpolation=cv2.INTER_CUBIC)
         else:
             dice_x = random.random()
             dice_y = random.random()
@@ -38,17 +38,17 @@ class MyDataset(Dataset):
             center = center.astype(int)
 
             # pad up and down
-            pad_v = np.ones((56, img.shape[1], 3), dtype=np.uint8) * 128
+            pad_v = np.ones((64, img.shape[1], 3), dtype=np.uint8) * 128
             
             img = np.concatenate((pad_v, img, pad_v), axis=0)
             
             # pad right and left
-            pad_h = np.ones((img.shape[0], 56, 3), dtype=np.uint8) * 128
+            pad_h = np.ones((img.shape[0], 64, 3), dtype=np.uint8) * 128
             
             img = np.concatenate((pad_h, img, pad_h), axis=1)
             
-            img = img[int(center[1] + 56 / 2):int(center[1] + 56 / 2 + 56),
-                      int(center[0] + 56 / 2):int(center[0] + 56 / 2 + 56), :]
+            img = img[int(center[1] + 64 / 2):int(center[1] + 64 / 2 + 64),
+                      int(center[0] + 64 / 2):int(center[0] + 64 / 2 + 64), :]
 
         if (random.random()>self.transformation['random_horizontal_flips']):
             img = cv2.flip(img,1)
@@ -85,4 +85,3 @@ def getLoader(txtPath, transform, bsize = 16, nworkers = 8, dataShuffle = True):
     data_loader = DataLoader(dataset, batch_size = bsize, num_workers = 1, shuffle = True)
 
     return data_loader
-    
