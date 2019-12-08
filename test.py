@@ -15,7 +15,7 @@ from utils.myDataLoader import getLoader
 def run():
 	parser = argparse.ArgumentParser(description='PyTorch Tiny ImageNet Classification Testing Code by Albert Christianto')
 	parser.add_argument('--dontUseCUDA', action='store_false', default = True) 
-	parser.add_argument('--val_txtPath', default='F:/Data/Program/myTiny-imageNet-classification/datalist/myVal.txt', type=str, metavar='DIR',
+	parser.add_argument('--val_txtPath', default='datalist/val.txt', type=str, metavar='DIR',
 	                                        help='path to validation list')
 	parser.add_argument('--num_class', default=200, type=int, metavar='N',
 	                                        help='number of classes for this implementation')
