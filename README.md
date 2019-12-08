@@ -16,9 +16,10 @@ In your command terminal, type these command below
 ```
 sudo apt-get install git
 ```
-* Clone this repository<br>
+* Clone this repository and go to the repository directory<br>
 ```
 git clone https://github.com/albertchristianto/myTiny-imageNet-classification
+cd myTiny-imageNet-classification
 ```
 * Install these python libraries <br>
 ```
@@ -28,7 +29,17 @@ sudo pip3 install pytorch torchvision
 * You are ready to run the code
 
 ## Train a Image Classification Network
-python train.py
+To train a image classification network using this repository, you must:
+* Download tiny-ImageNet dataset [here](http://cs231n.stanford.edu/tiny-imagenet-200.zip) and extract it
+* Generate train.txt, validation.txt, and test.txt inside datalist folder by running the following commands
+```
+python3 utils/createDataList.py --tinyImagenetPath [TINY_IMAGENET_FOLDER_PATH]
+```
+* And it is ready to train the network 
+```
+python3 train.py
+```
+
 
 ## Future Works
 * 
