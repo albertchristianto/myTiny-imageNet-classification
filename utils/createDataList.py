@@ -7,7 +7,8 @@ this program is used to generate training list, validation list, and testing lis
 
 parser = argparse.ArgumentParser(description='Generate Train, Val, and Test TXT List')
     
-parser.add_argument('--tinyImagenetPath', default='/media/albert/LocalDiskE/Albert_Christianto/dataset/tiny-imagenet-200', type=str, metavar='DIR', help='path to where tiny imagenet dataset') 
+parser.add_argument('--tinyImagenetPath', default='/media/ion/Seagate_Expansion_Drive/Data/DataSet/tiny-imagenet-200', 
+    type=str, metavar='DIR', help='path to where tiny imagenet dataset') 
       
 args = parser.parse_args()
 
@@ -22,7 +23,7 @@ print(testPath)
 #training list txt and class list txt
 print('Generating train list txt and class list txt')
 classList = os.listdir(trainPath)
-trainTxt = open('datalist/new_train.txt','w')
+trainTxt = open('datalist/train.txt','w')
 classTxt = open('datalist/class.txt','w')
 for i, classNow in enumerate(classList):
     imgListPath = os.path.join(trainPath,classNow,'images')
@@ -40,7 +41,7 @@ classTxt.close()
 print('Generating validation list txt') 
 valFile = open(valTXTPath)
 valData = valFile.readlines()
-valTxt = open('datalist/new_val.txt','w')
+valTxt = open('datalist/val.txt','w')
 for i, valDataNow in zip(range(len(valData)), valData):
     valDataNow = valDataNow.replace('\n', '').split('\t')
     imgPathNow = os.path.join(args.tinyImagenetPath,'val','images',valDataNow[0])
