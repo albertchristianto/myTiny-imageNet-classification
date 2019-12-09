@@ -39,7 +39,14 @@ python3 utils/createDataList.py --tinyImagenetPath [TINY_IMAGENET_FOLDER_PATH]
 ```
 python3 train.py
 ```
-
+* You can also resume your training using this following command. The checkpoint file is in the checkpoint folder.
+```
+python3 train.py --resume --checkpoint_dir [YOUR_CHECKPOINT_PATH]
+```
+* To monitor the training loss, you can run this following command on another command window and open your browser to access the provided address
+```
+tensorboard --logdir [YOUR_CHECKPOINT_PATH]
+```
 ## Test a Image Classification Network
 To test a image classification, you can run this following command
 ```
