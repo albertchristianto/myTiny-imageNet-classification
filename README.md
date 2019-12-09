@@ -1,5 +1,5 @@
 # myTiny-imageNet-classification
-This repository is a minimum implementation to train a image classification network on tiny ImageNet dataset. It is recommended for beginners in learning deep learning computer vision. It has a detailed explanation for each part of the code, which is used in image classification. It has detailed instruction to train on your custom dataset.
+This repository is a minimum implementation to train a image classification network on tiny ImageNet dataset. It is recommended for beginners in learning deep learning computer vision. It has detailed instruction to train on your custom dataset.
 
 ## Requirements
 * Ubuntu 16.04 LTS
@@ -40,6 +40,54 @@ python3 utils/createDataList.py --tinyImagenetPath [TINY_IMAGENET_FOLDER_PATH]
 python3 train.py
 ```
 
+## Test a Image Classification Network
+To test a image classification, you can run this following command
+```
+python3 test.py --val_txtPath [PATH_TO_VALIDATION_TXT_FILE] --weight_path [PATH_TO_YOUR_PTH_FILE]
+```
 
-## Future Works
-* 
+## Inference Code
+To see the classification result of a image, run the following command
+```
+python3 demo.py ----img_Path [PATH_TO_A_IMAGE_FILE] --weight_path [PATH_TO_YOUR_PTH_FILE]
+```
+
+## Training on Custom Dataset
+To train a image classification on your custom dataset, you can follow these steps:
+* Set your dataset format look like this
+```
+${DATA_ROOT}
+|-- YOUR_DATASET
+    |-- train
+        |-- your_class_0
+            |-- 000000000009.jpg
+            |-- ... 
+        |-- your_class_1
+            |-- 000000000139.jpg
+            |-- ...
+        ...
+    |-- validation
+        |-- your_class_0
+            |-- 000000000009.jpg
+            |-- ... 
+        |-- your_class_1
+            |-- 000000000139.jpg
+            |-- ...
+        ...
+
+```
+* Generate your train.txt, val.txt, and test.txt for your dataset using this format. For reference, you can see [here](https://github.com/albertchristianto/myTiny-imageNet-classification/blob/master/datalist/test.txt).
+```
+{DATA_ROOT}/YOUR_DATASET/train/your_class_0/000000000009.jpg 0
+{DATA_ROOT}/YOUR_DATASET/train/your_class_1/000000000139.jpg 1
+{IMG_PATH} {LABEL}
+...
+```
+* Run this following command
+```
+python3 train.py --train_txtPath [PATH_TO_TRAIN_TXT_FILE] --val_txtPath [PATH_TO_VALIDATION_TXT_FILE]
+```
+* For advanced training, run this command to see the training option
+```
+python3 train.py -h
+```
