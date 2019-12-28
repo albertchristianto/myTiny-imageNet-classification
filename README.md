@@ -98,3 +98,5 @@ python3 train.py --train_txtPath [PATH_TO_TRAIN_TXT_FILE] --val_txtPath [PATH_TO
 ```
 python3 train.py -h
 ```
+## License
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
