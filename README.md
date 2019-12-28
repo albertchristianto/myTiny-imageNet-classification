@@ -1,5 +1,5 @@
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
 # myTiny-imageNet-classification
-[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)<br>
 This repository is a minimum implementation to train a image classification network on tiny ImageNet dataset. It is recommended for beginners in learning deep learning computer vision. It has detailed instruction to train on your custom dataset.
 
 ## Requirements
